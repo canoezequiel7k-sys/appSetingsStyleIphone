@@ -1,6 +1,7 @@
 package com.arigondev.appsetting.redmobile
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.arigondev.appsetting.R
@@ -20,16 +21,24 @@ class DisplayReadMobileActivity : AppCompatActivity() {
 
 
         //binding llama los id que le pusimos a los include en el xml
-        binding.includedContainer.setupContainer(iconRes = R.drawable.ic_red_mobile,
+        binding.includedContainer.setupContainer(
+            iconRes = R.drawable.ic_red_mobile,
             titleRes = R.string.red_mobile,
             descriptionRes = R.string.redmobile_description,
             switchLabel = R.string.red_mobile,
-            showSwitch = true)
+            showSwitch = true
+        )
 
 
-        binding.includedHeader.btnBack.setOnClickListener {
-            //el finish cierra la pantalla actual y vuelve a la anterior.
-            finish()
+        binding.includedHeader.apply {
+            btnEdit.visibility = View.GONE
+
+            binding.includedHeader.btnBack.setOnClickListener {
+                //el finish cierra la pantalla actual y vuelve a la anterior.
+                finish()
+            }
         }
+
+
     }
 }

@@ -1,6 +1,7 @@
 package com.arigondev.appsetting.bluetooth
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,12 +29,19 @@ class DisplayBluetoothActivity : AppCompatActivity() {
             titleRes = R.string.bluetooth,
             descriptionRes = R.string.bluetooth_description,
             switchLabel = R.string.bluetooth,
-            showSwitch = true)
+            showSwitch = true
+        )
 
-        binding.includedHeader.btnBack.setOnClickListener {
-            //el finish cierra la pantalla actual y vuelve a la anterior.
-            finish()
+        binding.includedHeader.apply {
+            btnEdit.visibility = View.GONE //lo ocultamos al boton edit
+
+            binding.includedHeader.btnBack.setOnClickListener {
+
+                //el finish cierra la pantalla actual y vuelve a la anterior.
+                finish()
+            }
         }
+
 
     }
 }
