@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:paddingHorizontal="16dp"
     android:paddingVertical="12dp">
 
@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="#007AFF"/>
+        app:tint="#007AFF" />
 
 
     <!-- Nombre de la Red -->
@@ -32,9 +32,48 @@
         app:layout_constraintEnd_toStartOf="@id/layoutIcons"
         app:layout_constraintStart_toEndOf="@id/ivCheck"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Telecentro-6d17"/>
+        tools:text="Telecentro-6d17" />
 
+    <LinearLayout
+        android:id="@+id/layoutIcons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ivLock"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_lock"
+            app:tint="#8E8E93" />
 
+        <ImageView
+            android:id="@+id/ivSignal"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_wifi_redes"
+            app:tint="#8E8E93" />
+
+        <ImageView
+            android:id="@+id/ivInfo"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_info"
+            app:tint="@color/btn_info" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="#D1D1D6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvSsid" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

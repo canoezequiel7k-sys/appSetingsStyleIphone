@@ -12,7 +12,10 @@
 
 
     <!-- Description BtnOptions -->
+    <string name="permite_new_conecction">Permitir nuevas conexiones</string>
     <string name="wifi_description">Conectate a Wi-Fi, encuentra redes disponibles y administra la configuracion para conectarte a redes y puntos de xonexion cercanos.</string>
     <string name="bluetooth_description">Conectate con accesorios para reproducir musica, llamar por telefono y jugar.</string>
     <string name="redmobile_description">Enterate de la cantidad de datos que usas, establece restricciones de consumo de datos y administra la configuracion de tu operador, como las opciones de Esim y las llamadas por Wi-Fi.</string>
+    <string name="permisso">Se dactivaron del centro de control las conexiones nuevas por Bluetooth</string>
+    <string name="my_devices">Mis dispositivos</string>
 </resources>

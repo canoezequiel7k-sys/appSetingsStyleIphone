@@ -13,4 +13,6 @@
     <color name="background">#FFFFFFFF</color>
     <color name="backgountd_setting">#FCD7D7D7</color>
 
+
+    <color name="btn_info">#007AFF</color>
 </resources>

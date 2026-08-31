@@ -52,6 +52,16 @@ dependencies {
     implementation("com.google.android.material:material:1.12.0")
 
 
+    //Data Storre(Persistencia de datos)
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+
+    //Gson Para convertir objetos a json y viceversa
+    implementation("com.google.code.gson:gson:2.11.0")
+
+    //ViewMode y LiveData/Flow
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.5")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
