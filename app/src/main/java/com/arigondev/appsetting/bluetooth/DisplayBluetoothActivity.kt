@@ -5,11 +5,10 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.arigondev.appsetting.R
 import com.arigondev.appsetting.databinding.ActivityDisplayBluetoothBinding
 import com.arigondev.appsetting.setupContainer
@@ -18,21 +17,17 @@ import kotlinx.coroutines.launch
 class DisplayBluetoothActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDisplayBluetoothBinding
-
-    //aca declaro el viewModel
+    private lateinit var bluetoothAdapter: BluetoothAdapter
     private val viewModel: BluetoothViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //inicializamos el binding
         binding = ActivityDisplayBluetoothBinding.inflate(layoutInflater)
-
-        enableEdgeToEdge()
         setContentView(binding.root)
+        enableEdgeToEdge()
 
         binding.includedContainer.setupContainer(
-            //Definimos el contenido
             iconRes = R.drawable.ic_bluetooth,
             titleRes = R.string.bluetooth,
             descriptionRes = R.string.bluetooth_description,
@@ -40,38 +35,48 @@ class DisplayBluetoothActivity : AppCompatActivity() {
             showSwitch = true
         )
 
+        // Configurar RecyclerView
+        bluetoothAdapter = BluetoothAdapter(mutableListOf())
+        binding.rvBluetoothDevices.apply {
+            adapter = bluetoothAdapter
+            layoutManager = LinearLayoutManager(this@DisplayBluetoothActivity)
+        }
+
+        // Observar estado Switch y Visibilidad
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED){
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.bluetoothEnabled.collect { isEnabled ->
-                    //actualiza el switch sin disparar el listener infinitamente si es necesario,
-                    //o simplemente tetea el valor inicial
-                    if (binding.includedContainer.switchFeature.isChecked != isEnabled){
+                    if (binding.includedContainer.switchFeature.isChecked != isEnabled) {
                         binding.includedContainer.switchFeature.isChecked = isEnabled
                     }
+                    binding.layoutDevicesContainer.visibility = if (isEnabled) View.VISIBLE else View.GONE
                 }
             }
         }
 
-
-
-
-        //observa el estado de guardado
-        binding.includedHeader.apply {
-            btnEdit.visibility = View.GONE //lo ocultamos al boton edit
-
-            binding.includedHeader.btnBack.setOnClickListener {
-
-                //el finish cierra la pantalla actual y vuelve a la anterior.
-                finish()
+        // Observar lista de dispositivos
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.devices.collect { list ->
+                    bluetoothAdapter.updateData(list)
+                }
             }
         }
 
-        //Y actualiza el listener del switch
-        binding.includedContainer.switchFeature.setOnCheckedChangeListener { _, isChecked ->
-            viewModel.toggleBluetooth(isChecked)//aca guardo el estado del Switch del Bluetooth
+        binding.includedHeader.apply {
+            btnEdit.visibility = View.GONE
+            btnBack.setOnClickListener { finish() }
         }
 
+        binding.includedContainer.switchFeature.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.toggleBluetooth(isChecked)
+        }
 
-
+        // CARGA DE PRUEBA: Si la lista está vacía, añade estos 3 para que veas que funciona
+        if (viewModel.devices.value.isEmpty()) {
+            viewModel.addDevice("SOUND9PRO", "No conectado")
+            viewModel.addDevice("TWS", "No conectado")
+            viewModel.addDevice("WI-C100", "No conectado")
+        }
     }
 }
