@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:background="@color/backgountd_setting">
+    android:background="@color/bg_screen">
 
 
     <androidx.cardview.widget.CardView
@@ -13,6 +13,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="15dp"
+        android:backgroundTint="@color/bg_card"
         app:cardCornerRadius="40dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,8 +22,8 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center"
-            android:background="@color/background"
-            android:src="@drawable/ic_back" />
+            android:src="@drawable/ic_back"
+            android:tint="@color/text_primary"/>
     </androidx.cardview.widget.CardView>
 
 
@@ -30,7 +31,7 @@
         android:id="@+id/tvCentralTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
+        android:textColor="@color/text_primary"
         android:textSize="16sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -54,9 +55,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/background"
+            android:background="@color/bg_card"
             android:gravity="center"
-            android:text="@string/edit"/>
+            android:text="@string/edit"
+            android:textColor="@color/text_primary"/>
 
     </androidx.cardview.widget.CardView>
 

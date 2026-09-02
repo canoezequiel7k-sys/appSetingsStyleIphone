@@ -9,12 +9,13 @@
     <color name="white">#FFFFFFFF</color>
 
 
-<!-- Colors Settings Iphone -->
-    <color name="bg_card">#FFFFFFFF</color>
-    <color name="bg_screen">#FCD7D7D7</color>
-    <color name="text_primary">#FF000000</color>
+    <!-- Colors Settings Iphone -->
+    <color name="bg_card">#3A3A3A</color>
+    <color name="bg_screen">#FC000000</color>
+    <color name="text_primary">#FFFFFF</color>
     <color name="text_secondary">#FF757575</color>
 
-    <color name="ic_color">#FC000000</color>
+
+    <color name="ic_color">#FCFFFFFF</color>
     <color name="btn_info">#007AFF</color>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgountd_setting"
+    android:background="@color/bg_screen"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -12,11 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:text="Configuration"
-        android:textColor="@color/black"
+        android:textColor="@color/text_primary"
         android:textSize="20sp"
         android:textStyle="bold" />
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,14 +27,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/white"
+        android:background="@color/bg_card"
         android:gravity="center"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_logo_perfile" />
+            android:src="@drawable/ic_face_brother"
+            android:tint="@color/text_primary"/>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -49,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="Ezequiel Cano"
-                android:textColor="@color/black"
+                android:textColor="@color/text_primary"
                 android:textSize="13sp" />
 
             <TextView
@@ -57,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:text="Cuenta de Apple, iCloud y mas"
+                android:textColor="@color/text_secondary"
                 android:textSize="10sp"
                 android:textStyle="italic" />
         </LinearLayout>
@@ -65,17 +65,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
+            android:textColor="@color/text_secondary"
             android:text=">"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
     </androidx.cardview.widget.CardView>
-
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@color/bg_card"
         app:cardCornerRadius="12dp"
         app:cardElevation="0dp"
         app:strokeWidth="0dp">
@@ -84,6 +84,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/bg_card"
             android:orientation="vertical"
             android:divider="@drawable/space_divider"
             android:showDividers="middle">
@@ -96,13 +97,15 @@
                 <ImageView
                     android:layout_width="23dp"
                     android:layout_height="23dp"
-                    android:src="@drawable/ic_modo_avion" />
+                    android:src="@drawable/ic_modo_avion"
+                    android:tint="@color/ic_color"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_weight="1"
+                    android:textColor="@color/text_primary"
                     android:text="@string/air_mode"
                     android:textSize="15sp"/>
 
@@ -119,13 +122,15 @@
                 <ImageView
                     android:layout_width="23dp"
                     android:layout_height="23dp"
-                    android:src="@drawable/ic_wifi" />
+                    android:src="@drawable/ic_wifi"
+                    android:tint="@color/ic_color"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_weight="1"
+                    android:textColor="@color/text_primary"
                     android:text="@string/wifi"
                     android:textSize="15sp"/>
 
@@ -134,6 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="7dp"
                     android:text=">"
+                    android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -146,13 +152,15 @@
                 <ImageView
                     android:layout_width="23dp"
                     android:layout_height="23dp"
-                    android:src="@drawable/ic_bluetooth" />
+                    android:src="@drawable/ic_bluetooth"
+                    android:tint="@color/ic_color"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_weight="1"
+                    android:textColor="@color/text_primary"
                     android:text="@string/bluetooth"
                     android:textSize="15sp"/>
 
@@ -161,6 +169,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="7dp"
                     android:text=">"
+                    android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -173,13 +182,15 @@
                 <ImageView
                     android:layout_width="23dp"
                     android:layout_height="23dp"
-                    android:src="@drawable/ic_red_mobile" />
+                    android:src="@drawable/ic_red_mobile"
+                    android:tint="@color/ic_color"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_weight="1"
+                    android:textColor="@color/text_primary"
                     android:text="@string/red_mobile"
                     android:textSize="15sp"/>
 
@@ -188,6 +199,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="7dp"
                     android:text=">"
+                    android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -200,13 +212,15 @@
                 <ImageView
                     android:layout_width="23dp"
                     android:layout_height="23dp"
-                    android:src="@drawable/ic_bat" />
+                    android:src="@drawable/ic_bat"
+                    android:tint="@color/ic_color"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="7dp"
                     android:layout_weight="1"
+                    android:textColor="@color/text_primary"
                     android:text="@string/battery"
                     android:textSize="15sp"/>
 
@@ -215,6 +229,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="7dp"
                     android:text=">"
+                    android:textColor="@color/text_primary"
                     android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -222,5 +237,47 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:divider="@drawable/space_divider"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:id="@+id/btnDarkMode"
+                style="@style/text_ajust"
+                android:orientation="horizontal"
+                android:background="@color/bg_card">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/ic_dark_mode"
+                    android:tint="@color/ic_color"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="7dp"
+                    android:layout_weight="1"
+                    android:text="@string/dark_Mode"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp"/>
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchDarkMode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.appcompat.widget.LinearLayoutCompat>

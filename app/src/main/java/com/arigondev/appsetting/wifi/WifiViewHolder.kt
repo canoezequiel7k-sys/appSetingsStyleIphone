@@ -29,7 +29,7 @@ class WifiViewHolder(private val binding: ItemWifiNetworkBinding) :
 
             // Configuramos el color del nombre de la red
             // (Si está conectada podrías ponerlo en un azul iOS más adelante)
-            tvSsid.setTextColor(context.getColor(R.color.black))
+            tvSsid.setTextColor(context.getColor(R.color.text_primary))
 
             // Listener para el icono de información 'i'
             ivInfo.setOnClickListener {

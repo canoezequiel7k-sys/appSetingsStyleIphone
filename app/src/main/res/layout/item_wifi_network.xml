@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/bg_card"
     android:paddingHorizontal="16dp"
     android:paddingVertical="12dp">
 
@@ -26,13 +27,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/layoutIcons"
         app:layout_constraintStart_toEndOf="@id/ivCheck"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Telecentro-6d17" />
+        tools:text="Telecentro-6d17"
+        android:textColor="@color/text_primary"/>
 
     <LinearLayout
         android:id="@+id/layoutIcons"
