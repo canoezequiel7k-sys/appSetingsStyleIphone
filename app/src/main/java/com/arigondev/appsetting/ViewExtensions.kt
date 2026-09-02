@@ -94,8 +94,12 @@ fun LayoutSettingRowRedMobileBinding.setupOptionsCard(
     //configura la primer fila (La del switch)
     tvFeatureTitle.text = context.getString(switchLabelRes)
 
-    switchRedMobile.setOnCheckedChangeListener { _, isChecked ->
-        onSwitchChanged(isChecked)}
+    switchRedMobile.setOnCheckedChangeListener { buttonView, isChecked ->
+        // Solo enviamos al ViewModel si el usuario FÍSICAMENTE presionó el switch con su dedo
+        if (buttonView.isPressed) {
+            onSwitchChanged(isChecked)
+        }
+    }
 
         //configura la segunda fiula (La de Opciones)
     tvFeatureState.text = context.getString(optionsLabelRes)

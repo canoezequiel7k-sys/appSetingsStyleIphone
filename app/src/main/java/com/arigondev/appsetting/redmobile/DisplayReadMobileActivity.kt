@@ -59,13 +59,14 @@ class DisplayReadMobileActivity : AppCompatActivity() {
 
                 //escuchamos los cambios en el radioGroup
                 dialogBinding.rgRoaming.setOnCheckedChangeListener { _, checkedOd ->
-                    when(checkedOd){
+                    when (checkedOd) {
                         R.id.rbOn -> {
                             //enviamos el dialoggo de roaming
                             Log.d("RED_MOBILE", "Seleccionó: Roaming Activado")
                             viewModel.setRoamingEnabled(true)
                             dialog.dismiss()
                         }
+
                         R.id.rbOff -> {
                             Log.d("RED_MOBILE", "Seleccionó: Roaming Desactivado")
                             viewModel.setRoamingEnabled(false)
@@ -74,11 +75,19 @@ class DisplayReadMobileActivity : AppCompatActivity() {
                     }
                 }
 
-                dialog.show() }
+                dialog.show()
+            }
         )
 
+        // Listener para que el switch de activar esta línea
+        binding.includedOperatorCard.switchActivateLine.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (buttonView.isPressed) {
+                viewModel.setLineActivated(isChecked)
+            }
+        }
 
 
+        //boton atras
         binding.includedHeader.apply {
             btnEdit.visibility = View.GONE
 
@@ -89,17 +98,41 @@ class DisplayReadMobileActivity : AppCompatActivity() {
         }
 
 
+        // Observar Roaming
         lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED){
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.isRoamingEnabled.collect { isEnabled ->
-                    if (isEnabled){
+                    if (isEnabled) {
                         binding.includedStates.tvRoamingValue.text = getString(R.string.featureStateOn)
-                    }else{
+                        binding.includedOperatorCard.root.visibility = View.VISIBLE
+                        binding.textMovistar.visibility = View.VISIBLE
+                    } else {
                         binding.includedStates.tvRoamingValue.text = getString(R.string.featureStateOff)
+                        binding.includedOperatorCard.root.visibility = View.GONE
+                        binding.textMovistar.visibility = View.GONE
+                    }
+                }
+            }
+        }
+        //Escuchar los switch del celular
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isMobileDataEnabled.collect { isEnabled ->
+                    // Solo lo cambiamos si el estado actual es diferente al nuevo
+                    if (binding.includedStates.switchRedMobile.isChecked != isEnabled) {
+                        binding.includedStates.switchRedMobile.isChecked = isEnabled
                     }
                 }
             }
         }
 
+        // Observa Línea Activada
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isLineActivated.collect { isEnabled ->
+                    binding.includedOperatorCard.switchActivateLine.isChecked = isEnabled
+                }
+            }
+        }
     }
 }

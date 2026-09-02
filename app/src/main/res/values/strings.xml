@@ -24,5 +24,6 @@
     <string name="featureStateOn">Roaming activado</string>
     <string name="options">Opciones</string>
     <string name="textConsejo">Desactiva los datos celulares para restringir a WI-FI el trafico de datos(correo, internet, notificaciones, etc.).</string>
+    <string name="activate_line">Activar esta linea</string>
 
 </resources>

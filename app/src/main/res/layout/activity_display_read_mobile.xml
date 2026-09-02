@@ -45,4 +45,28 @@
         android:layout_marginTop="5dp"
         android:layout_marginHorizontal="30dp"/>
 
+    <TextView
+        android:id="@+id/textMovistar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movistar"
+        android:visibility="gone"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textConsejo"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="30dp"/>
+
+    <include
+        android:id="@+id/includedOperatorCard"
+        layout="@layout/layout_card_operator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textMovistar"
+        android:layout_marginTop="5dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
