@@ -8,7 +8,29 @@ El proyecto tiene fines educativos y de demostración, aplicando conceptos de ar
 
 ## 📱 Capturas
 
-> Próximamente se agregarán capturas de las diferentes pantallas de la aplicación.
+### 🏠 Pantalla principal
+
+![Pantalla principal](screenshots/main_no_dark.png)
+
+### 📶 Wi-Fi
+
+![Configuración Wi-Fi]()
+
+### 📡 Bluetooth
+
+![Configuración Bluetooth]()
+
+### 📱 Red móvil
+
+![Configuración de red móvil](screenshots/display_red_mobile.png)
+
+### 🔋 Batería
+
+![Configuración de batería]()
+
+### 🌙 Modo oscuro
+
+![Modo oscuro](screenshots/main_dark_mode.png)
 
 ---
 
