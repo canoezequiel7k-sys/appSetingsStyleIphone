@@ -10,7 +10,7 @@ El proyecto tiene fines educativos y de demostración, aplicando conceptos de ar
 
 ### 🏠 Pantalla principal
 
-![Pantalla principal](screenshots/main_no_dark.png)
+![Pantalla principal](screenshots/main_no_dark_mode.png)
 
 ### 📶 Wi-Fi
 
