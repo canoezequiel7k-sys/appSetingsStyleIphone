@@ -18,4 +18,11 @@
     <string name="redmobile_description">Enterate de la cantidad de datos que usas, establece restricciones de consumo de datos y administra la configuracion de tu operador, como las opciones de Esim y las llamadas por Wi-Fi.</string>
     <string name="permisso">Se dactivaron del centro de control las conexiones nuevas por Bluetooth</string>
     <string name="my_devices">Mis dispositivos</string>
+
+    <string name="roamingIndo">Roaming de datos:</string>
+    <string name="featureStateOff">Roaming desactivado</string>
+    <string name="featureStateOn">Roaming activado</string>
+    <string name="options">Opciones</string>
+    <string name="textConsejo">Desactiva los datos celulares para restringir a WI-FI el trafico de datos(correo, internet, notificaciones, etc.).</string>
+
 </resources>

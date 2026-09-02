@@ -2,6 +2,8 @@ package com.arigondev.appsetting
 
 import android.view.View
 import com.arigondev.appsetting.databinding.LayoutCustomContainerBinding
+import com.arigondev.appsetting.databinding.LayoutInfoCardRedMobileBinding
+import com.arigondev.appsetting.databinding.LayoutSettingRowRedMobileBinding
 
 /**
  * Función de extensión para personalizar el contenedor de ajustes.
@@ -12,6 +14,7 @@ import com.arigondev.appsetting.databinding.LayoutCustomContainerBinding
  * @param switchLabelRes ID opcional para el texto junto al switch.
  * @param showSwitch Booleano que determina si se muestra la fila del switch y el divisor.
  */
+
 
 //Funcion de extencion para el binding de los contenedores
 fun LayoutCustomContainerBinding.setupContainer(
@@ -51,6 +54,53 @@ fun LayoutCustomContainerBinding.setupContainer(
         // ocultamos tanto la fila (boxTwo) como el divisor.
         boxTwo.visibility = View.GONE
         divider.visibility = View.GONE
+    }
+}
+
+/*---------------------------------------------------------------------------------
+*                                                                                 |
+*                         FUNCIONES PARA RED MOBILE                               |
+*                                                                                 |
+* --------------------------------------------------------------------------------*/
+
+
+//Esta funcion va a servir para poner el icono, la descripcion y el titulo
+fun LayoutInfoCardRedMobileBinding.setupInfoCard(
+    iconRes: Int,
+    titleRes: Int,
+    descriptionRes: Int? = null
+){
+    val context = root.context
+    ivFeatureIcon.setImageResource(iconRes)
+    tvFeatureTitle.text = context.getString(titleRes)
+
+    if (descriptionRes != null){
+        tvFeatureDescription.text = context.getString(descriptionRes)
+        tvFeatureDescription.visibility = android.view.View.VISIBLE
+    }else{
+        tvFeatureDescription.visibility = android.view.View.GONE
+    }
+}
+
+//Esta es más interesante porque maneja dos cosas a la vez dentro de la misma tarjeta.
+fun LayoutSettingRowRedMobileBinding.setupOptionsCard(
+    switchLabelRes: Int,
+    optionsLabelRes: Int,
+    onSwitchChanged: (Boolean) -> Unit,
+    onOptionsClick:() -> Unit
+){
+    val context = root.context
+
+    //configura la primer fila (La del switch)
+    tvFeatureTitle.text = context.getString(switchLabelRes)
+
+    switchRedMobile.setOnCheckedChangeListener { _, isChecked ->
+        onSwitchChanged(isChecked)}
+
+        //configura la segunda fiula (La de Opciones)
+    tvFeatureState.text = context.getString(optionsLabelRes)
+    optionState.setOnClickListener {
+        onOptionsClick()
     }
 
 }

@@ -77,6 +77,7 @@ class DisplayBluetoothActivity : AppCompatActivity() {
             viewModel.addDevice("SOUND9PRO", "No conectado")
             viewModel.addDevice("TWS", "No conectado")
             viewModel.addDevice("WI-C100", "No conectado")
+            viewModel.addDevice("SOUND9PRO", "No conectado")
         }
     }
 }
