@@ -14,11 +14,11 @@ El proyecto tiene fines educativos y de demostración, aplicando conceptos de ar
 
 ### 📶 Wi-Fi
 
-![Configuración Wi-Fi]()
+![Configuración Wi-Fi](screenshots/display_wifi.png)
 
 ### 📡 Bluetooth
 
-![Configuración Bluetooth]()
+![Configuración Bluetooth](screenshots/display_bluetooth.png)
 
 ### 📱 Red móvil
 
@@ -32,6 +32,9 @@ El proyecto tiene fines educativos y de demostración, aplicando conceptos de ar
 
 ![Modo oscuro](screenshots/main_dark_mode.png)
 
+### 🌙 Mapa del proyecto actualmente (03/09)
+
+![Modo oscuro](screenshots/mapa.png)
 ---
 
 ## 🚀 Características
